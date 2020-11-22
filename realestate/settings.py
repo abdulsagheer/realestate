@@ -38,6 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages',
+    'listings',
+    'realtors',
+    'accounts',
+    'contacts',
+    'ckeditor',
+    'django.contrib.humanize',
+
 ]
 
 MIDDLEWARE = [
@@ -76,8 +83,11 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'btre_db',
+        'USER':'postgres',
+        'PASSWORD':'sagheer29',
+        'HOST':'localhost',
     }
 }
 
@@ -124,3 +134,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'realestate/static')
 ]
+
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
+#Email
+
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='sagheersagheer9118@gmail.com'
+EMAIL_HOST_PASSWORD='sagheer@2901'
+EMAIL_USE_TLS=True
