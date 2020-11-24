@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'yrp6y2(ujtt&)y912(b182+f-*opp^3g(s((n45(3eb6n1ykl4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['enigmatic-plains-29852.herokuapp.com']
 
 LOGIN_REDIRECT_URL='accounts:dashboard'
 
