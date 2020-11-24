@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -62,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'realestate.urls'
@@ -88,17 +90,17 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'btre_db',
-        'USER':'postgres',
-        'PASSWORD':'sagheer29',
-        'HOST':'localhost',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'btre_db',
+#         'USER':'postgres',
+#         'PASSWORD':'sagheer29',
+#         'HOST':'localhost',
+#     }
+# }
 
-
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:sagheer29@localhost/btre_db')}
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -159,3 +161,6 @@ EMAIL_PORT=587
 EMAIL_HOST_USER='sagheersagheer9118@gmail.com'
 EMAIL_HOST_PASSWORD='sagheer@2901'
 EMAIL_USE_TLS=True
+
+
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
