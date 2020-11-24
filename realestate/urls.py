@@ -24,6 +24,7 @@ urlpatterns = [
     path('listings/',include('listings.urls',namespace='listings')),
     path('realtors/',include('realtors.urls',namespace='realtors')),
     path('accounts/',include('accounts.urls',namespace='accounts')),
+    path('socialaccounts/',include('allauth.urls')),
     path('contacts/',include('contacts.urls',namespace='contacts')),
 ] 
 urlpatterns += static(

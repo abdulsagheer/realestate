@@ -95,3 +95,33 @@ img {
     font-size: 30px; }
   #showcase-inner h1 {
     font-size: 40px; } }
+    * {box-sizing: border-box}
+div.clearfix{
+  text-align: center;
+  margin: auto;
+  padding: 2%;
+}
+a.facebook-bg{
+  background-color:#4867aa;
+  text-decoration: none;
+  color: #fff;
+}
+a.facebook-bg:hover{
+  background-color: #3b5998;
+}
+a.google-bg{
+  background-color:  #dd4b39;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 2%;
+}
+a.google-bg:hover{
+  background-color: #C20806;
+}
+.hello{
+  margin-top: 2%;
+}
+i.fab{
+margin-right: 2%;
+
+}
